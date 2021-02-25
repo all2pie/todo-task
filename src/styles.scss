@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: #c8c0ff !important;
+
+  &:hover {
+    color: #a69bf7 !important;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+.mat-card-header-text {
+  width: 100%;
+}
+
+.big-box .mat-checkbox-inner-container {
+  height: 24px;
+  width: 24px;
+}

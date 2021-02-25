@@ -1,0 +1,25 @@
+<mat-card [ngClass]="{ done: todo.isDone }">
+  <mat-card-header>
+    <mat-card-title class="header">
+      <div class="d-flex justify-content-between">
+        <div>{{ todo.title }}</div>
+        <div class="big-box">
+          <mat-checkbox [(ngModel)]="todo.isDone"> </mat-checkbox>
+        </div>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ todo.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="d-flex justify-content-between">
+    <button mat-icon-button color="primary" (click)="updateTodo(todo.id)">
+      <mat-icon>create</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="delete(todo.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

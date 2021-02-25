@@ -1,0 +1,45 @@
+.background {
+  height: 100%;
+  width: 100%;
+  background: #303030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .auth-card {
+    border-radius: 12px;
+    background: #424242;
+    box-shadow: 0 0 14px #80008033;
+    padding: 22px;
+    width: 50%;
+    height: 50%;
+
+    form {
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+
+      .form-fields {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        height: 100%;
+
+        mat-form-field {
+          margin-top: 14px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+
+        a {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

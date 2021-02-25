@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>
+  {{ data.action == "create" ? "Add new Todo" : "Update Todo" }}
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="fg" class="d-flex flex-column">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput type="text" formControlName="description" />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="justify-content-end">
+  <button mat-stroked-button (click)="dialogRef.close()">Close</button>
+  <button
+    mat-stroked-button
+    color="accent"
+    [disabled]="fg.invalid"
+    (click)="save()"
+  >
+    Save
+  </button>
+</div>

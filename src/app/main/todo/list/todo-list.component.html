@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6" *ngFor="let todo of todoList | async">
+      <app-todo-card [todo]="todo"></app-todo-card>
+    </div>
+  </div>
+</div>
+
+<button class="add-btn" mat-fab color="primary" (click)="addTodo()">
+  <mat-icon>add</mat-icon>
+</button>

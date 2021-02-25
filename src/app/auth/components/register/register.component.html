@@ -1,0 +1,52 @@
+<div class="background">
+  <div class="auth-card">
+    <form [formGroup]="fg">
+      <div class="form-fields">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="name" />
+          <mat-error *ngIf="fg.get('name').hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" />
+          <mat-error
+            *ngIf="
+              fg.get('email').hasError('email') &&
+              !fg.get('email').hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="fg.get('email').hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="fg.get('password').hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="actions">
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="register()"
+          [disabled]="fg.invalid"
+        >
+          Register
+        </button>
+
+        <a routerLink="/auth/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
