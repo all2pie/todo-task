@@ -5,11 +5,17 @@
     >Total Todo: <span class="todo-counter">{{ totalTodo }}</span>
   </span>
 
-  <button mat-icon-button color="primary" (click)="logout()">
-    <mat-icon>logout</mat-icon>
-  </button>
+  <button mat-button [matMenuTriggerFor]="menu">{{ user.name }}</button>
 </mat-toolbar>
 
+<mat-menu #menu="matMenu">
+  <div class="menu-item" (click)="logout()">
+    <span>Logout</span>
+    <button mat-icon-button color="primary">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-menu>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
